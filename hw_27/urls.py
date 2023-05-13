@@ -17,9 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from ads.views import root
+from ads.views import root, CategoryListCreateView, CategoryDetailView, AdListCreateView, AdDetailView
 
 urlpatterns = [
     path('', root),
+    path('cat/', CategoryListCreateView.as_view()),
+    path('cat/<int:pk>/', CategoryDetailView.as_view()),
+
+    path('ad/', AdListCreateView.as_view()),
+    path('ad/<int:pk>/', AdDetailView.as_view()),
+
     path("admin/", admin.site.urls),
 ]
