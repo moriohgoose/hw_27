@@ -9,9 +9,22 @@ class Ad(models.Model):
     is_published = models.BooleanField()
     price = models.PositiveIntegerField()
 
+    class Meta:
+        verbose_name = "Объявление"
+        verbose_name_plural = "Объявления"
+
+    def __str__(self):
+        return self.username
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
+
+    def __str__(self):
+        return self.username
 
 
 
